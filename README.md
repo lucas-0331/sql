@@ -95,7 +95,6 @@ A tabela verdade para esses tipos de operadores:
 |    Tabela Verdade - Operador AND    |
 |-------------------------------------|
 | Condição A | Condição B | Resultado |
-|-------------------------------------|
 | Falsa      | Falsa      | FALSO     |
 | Verdadeira | Falsa      | FALSO     |
 | Falsa      | Verdadeira | FALSO     |
@@ -104,7 +103,6 @@ A tabela verdade para esses tipos de operadores:
 |    Tabela Verdade - Operador OR     |
 |-------------------------------------|
 | Condição A | Condição B | Resultado |
-|-------------------------------------|
 | Falsa      | Falsa      | FALSO     |
 | Verdadeira | Falsa      | FALSO     |
 | Falsa      | Verdadeira | FALSO     |
