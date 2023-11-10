@@ -95,6 +95,7 @@ A tabela verdade para esses tipos de operadores:
 ### Tabela Verdade - Operador AND  
 
 | Condição A | Condição B | Resultado |
+|------------|------------|-----------|
 | Falsa      | Falsa      | FALSO     |
 | Verdadeira | Falsa      | FALSO     |
 | Falsa      | Verdadeira | FALSO     |
@@ -103,7 +104,7 @@ A tabela verdade para esses tipos de operadores:
 ### Tabela Verdade - Operador OR  
 
 | Condição A | Condição B | Resultado |
-|-------------------------------------|
+|------------|------------|-----------|
 | Falsa      | Falsa      | FALSO     |
 | Verdadeira | Falsa      | FALSO     |
 | Falsa      | Verdadeira | FALSO     |
@@ -120,7 +121,7 @@ O operador **lógico** do tipo **NOT** é utilizados quando é preciso estabelec
 ### Tabela Verdade - Operador NOT  
 
 | Condição      | Resultado     |
-|-------------------------------|
+|---------------|---------------|
 | Falsa         | VERDADEIRO    |
 | Verdadeira    | FALSO         |
 
