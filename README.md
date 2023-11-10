@@ -92,13 +92,23 @@ Os operadores **lógicos AND** e **OR**, utilizados para conectar critérios de 
 
 A tabela verdade para esses tipos de operadores:
 
-|    Tabela Verdade - Operador AND    |  |    Tabela Verdade - Operador OR     |
+|    Tabela Verdade - Operador AND    |
+|-------------------------------------|
+| Condição A | Condição B | Resultado |
+|-------------------------------------|
+| Falsa      | Falsa      | FALSO     |
+| Verdadeira | Falsa      | FALSO     |
+| Falsa      | Verdadeira | FALSO     |
+| Verdadeira | Verdadeira | VERDADEIRO|
 
-| Condição A | Condição B | Resultado |  | Condição A | Condição B | Resultado |
-| Falsa      | Falsa      | FALSO     |  | Falsa      | Falsa      | FALSO     |
-| Verdadeira | Falsa      | FALSO     |  | Verdadeira | Falsa      | FALSO     |
-| Falsa      | Verdadeira | FALSO     |  | Falsa      | Verdadeira | FALSO     |
-| Verdadeira | Verdadeira | VERDADEIRO|  | Verdadeira | Verdadeira | VERDADEIRO|
+|    Tabela Verdade - Operador OR     |
+|-------------------------------------|
+| Condição A | Condição B | Resultado |
+|-------------------------------------|
+| Falsa      | Falsa      | FALSO     |
+| Verdadeira | Falsa      | FALSO     |
+| Falsa      | Verdadeira | FALSO     |
+| Verdadeira | Verdadeira | VERDADEIRO|
 
  ```
  SELECT * FROM cadfun WHERE (depto = '03') AND (funcao = 'programador');
