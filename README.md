@@ -92,17 +92,18 @@ Os operadores **lógicos AND** e **OR**, utilizados para conectar critérios de 
 
 A tabela verdade para esses tipos de operadores:
 
-|    Tabela Verdade - Operador AND    |
-|-------------------------------------|
+### Tabela Verdade - Operador AND  
+
 | Condição A | Condição B | Resultado |
 | Falsa      | Falsa      | FALSO     |
 | Verdadeira | Falsa      | FALSO     |
 | Falsa      | Verdadeira | FALSO     |
 | Verdadeira | Verdadeira | VERDADEIRO|
 
-|    Tabela Verdade - Operador OR     |
-|-------------------------------------|
+### Tabela Verdade - Operador OR  
+
 | Condição A | Condição B | Resultado |
+|-------------------------------------|
 | Falsa      | Falsa      | FALSO     |
 | Verdadeira | Falsa      | FALSO     |
 | Falsa      | Verdadeira | FALSO     |
@@ -116,7 +117,7 @@ A tabela verdade para esses tipos de operadores:
 
 O operador **lógico** do tipo **NOT** é utilizados quando é preciso estabelecer que uma determinada condição deva não ser verdadeira ou deva não ser falsa. Ou seja, o operador NOT inverte o estado lógico de uma condição. A tabela verdade e um exemplo de comando para esse operador, podem ser assim descritos:
 
-| Tabela Verdade - Operador NOT |
+### Tabela Verdade - Operador NOT  
 
 | Condição      | Resultado     |
 |-------------------------------|
