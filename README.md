@@ -23,9 +23,7 @@ SELECT nome, salario + 100 FROM cadfun;
 ```
 
 > *Outro exemplo é também a execução do comando:*
-> ```
-SELECT nome, salario, salario + FROM cadfun;
-```
+> ```SELECT nome, salario, salario + FROM cadfun;```
 
 - Prática Multiplicação:
 
