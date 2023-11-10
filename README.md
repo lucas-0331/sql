@@ -18,16 +18,22 @@ Os operadores **aritméticos** são as ferramentas responsáveis pelas operaçõ
 
 A empresa deseja fazer uma simulação de aumento de salário em R$100,00 sobre o salário de cada funcionário. Desta forma, se o comando abaixo for executado, será exibido o nome do funcionário e o valor do salário acrescido de R$100,00. Porém, a ** tabela cadfun** não sofrerá a alteração física dos seus dados:
 
-```SELECT nome, salario + 100 FROM cadfun;```
+```
+SELECT nome, salario + 100 FROM cadfun;
+```
 
 > *Outro exemplo é também a execução do comando:*
-> ```SELECT nome, salario, salario + FROM cadfun;```
+> ```
+SELECT nome, salario, salario + FROM cadfun;
+```
 
 - Prática Multiplicação:
 
 A empresa deseja fazer uma simução de aumento de salário em 20% sobre o salário atual de cada funcionário. Desta for,a, se o comando abaixo for executado, será exibido o nome do funcionário e o valor do salário acrescido de 20%, da seguinte forma:
 
-```SELECT nome, salario * 1.20 FROM cadfun;```
+```
+SELECT nome, salario * 1.20 FROM cadfun;
+```
 
 - Conceitos:
 
