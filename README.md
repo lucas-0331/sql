@@ -33,6 +33,8 @@ A empresa deseja fazer uma simução de aumento de salário em 20% sobre o salá
 
 Os operadores aritméticos possibilitam realizar diversos cálculos matemáticos. Além de operações simples que envolvem dois termos para um determinado cálculo, é possível definir algumas expressões aritméticas, como 2 + 3 * 5 que retorna como resultado o valor 17.
 
-```SELECT 2 + 3 * 5;```
+```
+SELECT 2 + 3 * 5;
+```
 
 > *Primeiramente foi feita a multiplicação de 3 por 5, depois a soma de 2. Caso queira mudar a ordem de procedência dos operadores, é necessário usar parêntereses. Assim, (2 + 3) * 5 resultará no valor 25.*
