@@ -106,8 +106,8 @@ A tabela verdade para esses tipos de operadores:
 | Condição A | Condição B | Resultado |
 |------------|------------|-----------|
 | Falsa      | Falsa      | FALSO     |
-| Verdadeira | Falsa      | FALSO     |
-| Falsa      | Verdadeira | FALSO     |
+| Verdadeira | Falsa      | VERDADEIRO|
+| Falsa      | Verdadeira | VERDADEIRO|
 | Verdadeira | Verdadeira | VERDADEIRO|
 
  ```
