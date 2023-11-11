@@ -21,3 +21,19 @@
 - 9. Listar os nomes e os departamentos de todos os funcionários em letras minúsculas que pertençam aos departamento 03 e 05.
 
 - 10. Listar os nomes e os departamentos de todos os funcionários que pertençam aos departamentos 02 e 03.
+
+- 11. Listar os nomes e os departamentos de todos os funcionários que exerçam a função de vendedor, vendedora, supervisor, supervisora.
+
+- 12. Listar os nomes dos funcionários que possuem salário entre R$1.000,00 e R$2.000,00 e que exerçam o cargo de Supervisor.
+
+- 13. Qual(Quais) o(os) funcionário(s) que exerce(m) a função de supervisor?
+
+- 14. Qual(Quais) o(os) funcionário(s) que exerce(m) a função de vendedor ou vendedora?
+
+- 15. Qual(Quais) o(os) funcionário(s) que exerce(m) a função de supervisor ou supervisora e que ganham menos de R$2.100,00?
+
+- 16. Qual(Quais) o(os) funcionário(s) que foram admitidos depois de 01 de janeiro de 2000?
+
+- 17. Qual(Quais) o(os) funcionário(s) que foram admitidos antes de 31 de dezembro de 2010 e que exerçam a função de programador ou supervisor?
+
+- 18. Listar o nome, o salário e o salário acrescido de 20% de tdos os funcionários da empresa.
