@@ -283,8 +283,24 @@ SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE '_A%';
 
 Da mesma forma que os demais, o operador lógico **NOT** procura negar a busca de alguma sequência de caracter.
 
-Por exemplo: Podemos imaginar a situação de precisar consultar todos os registros da tabela **Funcionarios** com exceção dos registros em que o campo **nome_completo** contenha a sequência de caracteres NA. Assim, utiliza-se também o operador lógico **NOT** no comando:
+Por exemplo: Podemos imaginar a situação de precisar consultar todos os registros da tabela **Funcionarios** com exceção dos registros em que o campo **nome_completo** contenha a sequência de caracteres **AN**. Assim, utiliza-se também o operador lógico **NOT** no comando:
 
 ```
-SELECT nome_completo FROM Funcionarios WHERE nome_completo NOT LIKE '%AN%';
+SELECT nome_completo FROM Funcionarios WHERE nome_completo NOT LIKE '%AN%'; 
+```
+
+- Prática:
+
+Utilize o operador **LIKE** para fazer as seguintes atividades:
+
+> Aparesente uma consulta dos registros de todos os funcionários que possuam a sequência de caracteres **AN** em qualquer posição de seu nome;  
+> Apresente uma consulta dos registros de todos os funcionários com salário cujo valor termine com o valor/caracter **6**;  
+> Apresente uma consulta dos registros de todos of funcionários com salário cujo valor termine com o valor/caracter **2**, mas que tenha como segundo valor/caracter do campo o valor **5**;
+
+- Respostas:
+
+```{r, results='hide'}
+SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE '%AN%';
+SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '%6";
+SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '_5%2';
 ```
