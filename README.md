@@ -299,7 +299,7 @@ Utilize o operador **LIKE** para fazer as seguintes atividades:
 
 - Respostas:
 
-```{r, message=FALSE}
+```{message=FALSE}
 message("SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE '%AN%';")
 message("SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '%6";")
 message("SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '_5%2';")
