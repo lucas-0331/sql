@@ -2,9 +2,11 @@
 
  Utilizando o script **Funcionario.sql**, realize as seguintes atividades abaixo, utilizando comandos SQL, de maneira a responder os seguintes questionamentos:
 
-- 1. Qual o salário dos funcionários da empresa que atuam no departamento 05?  
+- 1. Qual o salário dos funcionários da empresa que atuam no departamento 05?
 
-- 2. Qual o salário dos funcionários da empresa que são programadores?  
+
+- 2. Qual o salário dos funcionários da empresa que são programadores?
+
 
 - 3. Qual o salário dos funcionários da empresa que são vendedores?
 
