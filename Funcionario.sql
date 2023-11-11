@@ -36,3 +36,29 @@ INSERT INTO Funcionarios VALUES (12, 'Paulo da Silva', '02', 'Vendedor', 1530.00
 SELECT * FROM Funcionarios;
 
 SELECT nome_completo, salario + 100 FROM Funcionarios;
+
+SELECT nome_completo, salario, salario + 100 FROM Funcionarios;
+
+SELECT nome_completo, salario * 1.20 FROM Funcionarios;
+
+SELECT nome_completo, salario, salario * 1.20 FROM Funcionarios;
+
+SELECT 2 + 3 * 5;
+
+SELECT (2 + 3) * 5;
+
+-- Comparações;
+
+SELECT * FROM Funcionarios WHERE departamento = '05';
+
+SELECT * FROM Funcionarios WHERE funcao = 'Vendedor';
+
+SELECT * FROM Funcionarios WHERE salario <= 1700; 
+
+-- Operadores;
+
+SELECT * FROM Funcionarios WHERE (departamento = '03') AND (funcao = 'Programador');
+
+SELECT * FROM Funcionarios WHERE (departamento = '02') OR (departamento = '05');
+
+SELECT * FROM Funcionarios WHERE NOT (funcao = 'Vendedor');
