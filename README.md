@@ -16,21 +16,23 @@ Os operadores **aritméticos** são as ferramentas responsáveis pelas operaçõ
 
 - Prática Adição:
 
-A empresa deseja fazer uma simulação de aumento de salário em R$100,00 sobre o salário de cada funcionário. Desta forma, se o comando abaixo for executado, será exibido o nome do funcionário e o valor do salário acrescido de R$100,00. Porém, a **tabela cadfun** não sofrerá a alteração física dos seus dados:
+A empresa deseja fazer uma simulação de aumento de salário em R$100,00 sobre o salário de cada funcionário. Desta forma, se o comando abaixo for executado, será exibido o nome do funcionário e o valor do salário acrescido de R$100,00. Porém, a **tabela Funcionarios** não sofrerá a alteração física dos seus dados:
 
 ```
-SELECT nome, salario + 100 FROM cadfun;
+SELECT nome_completo, salario + 100 FROM Funcionarios;
 ```
 
-> *Outro exemplo é também a execução do comando:*
-> ```SELECT nome, salario, salario + FROM cadfun;```
+> *Outro exemplo é também a execução do comando:*  
+> ```
+> SELECT nome_completo, salario, salario + 100 FROM Funcionarios;
+> ```
 
 - Prática Multiplicação:
 
 A empresa deseja fazer uma simução de aumento de salário em 20% sobre o salário atual de cada funcionário. Desta for,a, se o comando abaixo for executado, será exibido o nome do funcionário e o valor do salário acrescido de 20%, da seguinte forma:
 
 ```
-SELECT nome, salario * 1.20 FROM cadfun;
+SELECT nome_completo, salario * 1.20 FROM Funcionarios;
 ```
 
 - Conceitos:
@@ -64,9 +66,9 @@ Os operadores de **comparação**, também conhecidos como operadores **relacion
 A definição de uma condição usa dois termos, normalmente representados por um campo (coluna) da tabela, um valor de verificação e mais um operador relacional. Alguns exemplos de consultas que podem ser realizadas com operadores aritméticos (ou operadores relacionais):
 
 ```
-SELECT * FROM cadfun WHERE depto = '05';
-SELECT * FROM cadfun WHERE funcao = 'vendedor';
-SELECT * FROM cadfun WHERE salario = <= 1700;
+SELECT * FROM Funcionarios WHERE departamento = '05';
+SELECT * FROM Funcionarios WHERE funcao = 'Vendedor';
+SELECT * FROM Funcionarios WHERE salario = <= 1700;
 ```
 
 # Operadores Lógicos
@@ -111,8 +113,8 @@ A tabela verdade para esses tipos de operadores:
 | Verdadeira | Verdadeira | VERDADEIRO|
 
  ```
- SELECT * FROM cadfun WHERE (depto = '03') AND (funcao = 'programador');
- SELECT * FROM cadfun WHERE (depto = '03') OR (depto = '05');
+ SELECT * FROM Funcionarios WHERE (departamento = '03') AND (funcao = 'Programador');
+ SELECT * FROM Funcionarios WHERE (departamento = '03') OR (departamento = '05');
  ```
 - Conceitos:
 
@@ -126,5 +128,5 @@ O operador **lógico** do tipo **NOT** é utilizados quando é preciso estabelec
 | Verdadeira    | FALSO         |
 
 ```
-SELECT * FROM cadfun WHERE NOT (funcao = 'vendedor');
+SELECT * FROM Funcionarios WHERE NOT (funcao = 'Vendedor');
 ```
