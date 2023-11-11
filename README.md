@@ -152,3 +152,139 @@ O SGDB MySQL não possui este recurso. Mas isso não impede fazer uso deste tipo
 
 > - (<Condição A> AND (NOT <Condição B>)) OR ((NOT <Condição A>) AND <Condição B>);
 
+- Conceitos:
+
+Para um teste prático imagine a necessidade de apresentar uma listagem dos registros de todos os funcionários do departamento 3 que não ocupam o cargo de **Programador** e de todos os funcionários que ocupam o cargo de **Programador** que não sejam do departamento 3. Para isso, usamos a seguinte instrução:
+
+```
+SELECT * FROM Funcionários WHERE (departamento = '03' AND (NOT funcao = 'Programador')) OR ((NOT departamento = '03') AND funcao = 'Programador');
+```
+
+# Operadores Auxiliares
+
+- Conceitos:
+
+A linguagem de consulta estruturada SQL possui alguns outros operadores auxiliares que facilitam a definição de condições a serem utilziadas com os comandos SELECT, UPDATE e DELETE, quando for utilizado o argumento WHERE. Podemos citar alguns desses operadores (os mais comuns):
+
+| Operador | Descrição                                   |
+|----------|---------------------------------------------|
+| IS NULL  | Verifica se um campo é vazio                |
+| BETWEEN  | Verifica um valor numa faixa de valores     |
+| IN       | Verifica se um valor existe na tabela       |
+| LIKE     | Verifica um valor buscando seus semelhantes |
+
+### IS NULL
+
+Este operador é utilizado quando há necessidade de verificar se um determinado campo da tabela possui registrado o valor NULL, ou seja, se um determinado campo está vazio.
+
+Por exemplo: Pretende-se fazer a inserção de um novo campo na tabela **Funcionarios** para registrar o número de filhos de cada funcionário. Os funcionários que não tiverem filhos terão nesse campo o valor NULL, uma vez que estará vazio. Desta forma serão realizados os seguintes comandos:
+
+```
+ALTER TABLE  Funcionarios ADD filhos SMALLINT;
+ALTER TABLE morto ADD filhos SMALLINT;
+```
+
+Para visualizar o novo campo, pode-se realizar os seguintes comandos:
+
+```
+SELECT nome_completo, filhos FROM Funcionarios;
+SELECT nome_completo, filhos FROM morto;
+```
+
+Em seguida, é necessário definir para alguns registros de funcionários e número de filhos. Desta forma pode-se realizar os seguintes comandos:
+
+```
+UPDATE Funcionarios SET filhos = 1 WHERE codigo_funcionario = 2;
+UPDATE Funcionarios SET filhos = 3 WHERE codigo_funcionario = 3;
+UPDATE Funcionarios SET filhos = 2 WHERE codigo_funcionario = 5;
+UPDATE Funcionarios SET filhos = 1 WHERE codigo_funcionario = 9;
+UPDATE Funcionarios SET filhos = 4 WHERE codigo_funcionario = 1;
+UPDATE Funcionarios SET filhos = 3 WHERE codigo_funcionario = 10;
+```
+
+Por fim, faça uma consulta apresentado o código, o nome e o número de filhos de todos os funcionários utilizando o comando:
+
+```
+SELECT codigo_funcionario, nome_completo, filhos FROM Funcionarios;
+```
+
+... E, em seguida, faça a mesma consulta exibindo somente os funcionários cujo campo **filho** estejam sinalizados como **NULL** (Ou seja, que não tenham filhos) utilizando o comando:
+
+```
+SELECT codigo_funcionario, nome_completo, filhos FROM Funcionarios WHERE filhos IS NULL;
+```
+
+Se a intenção é fazer a mesma consulta exibindo agora os funcionários cujo campo **filho não** estejam sinalizados como **NULL** (Ou seja, que tenham filhos) utiliza-se o operador lógico **NOT** no comando:
+
+```
+SELECT codigo_funcionario, nome_completo, filhos FROM Funcionarios WHERE NOT  filhos IS NULL;
+```
+
+### BETWEEN
+
+Este operador permite definir uma faixa de valores para a cláusula **WHERE** em uma condição. Desta forma, é possível extrair consultas de registros situados em uma faixa de valores.
+
+Por exemplo: Considere a necessidade de obter uma consulta de todos os registros de funcionários apresentando nome e número de filhos que recebem salário entre 1700 e 2000. Assim sendo, será realizado o seguinte comando:
+
+```
+SELECT nome_completo, filhos FROM Funcionarios WHERE salario BETWEEN 1700 AND 2000;
+```
+
+sE A INTENÇÃO É FAZER A MESMA CONSULTA EXIBINDO AGORA OS NOMES E SALÁRIOS DOS REGISTROS DOS FUNCIONÁRIOS QUE GANHAM ABAIXO DE 1700 E ACIMA DE 2000 (Ou seja, que não estejam na faixa de valores entre 1700 e 2000) utiliza-se também o operador lógico **NOT** no comando:
+
+```
+SELECT nome_completo, salario FROM Funcionarios WHERE salario NOT BETWEEN 1700 AND 2000;
+```
+
+### IN
+
+Este operador permite fazer a busca de um valor específico dentro de uma lista de valores definidos, retornando **TRUE** caso o valor específico esteja na lista. Os valores da lista devem estar entre apóstrofos.
+
+Por exemplo: Apresente uma consulta dos nomes e departamentos dos registros de funcionários cujo **departamento** seja 2 ou 3. Ou seja, dos funcionários locados no departamento 2 ou 3. Assim sendo, será realizado o seguinte comando:
+
+```
+SELECT nome_completo, departamento FROM Funcionarios WHERE departamento IN ('02', '03');
+```
+
+Da mesma forma que os demais, se a intenção é fazer a mesma consulta exibindo os nomes e os departamentos dos registros do funcionários cujo campo **departamento** seja diferente de 2 e 3 (Ou seja, que não estejam locados nos departamentos 2 e 3) utiliza-se também o operador lógico **NOT** no comando:
+
+```
+SELECT nome_completo, departamento FROM Funcionarios WHERE departamento NOT IN ('02', '03');
+```
+
+# LIKE
+
+Este operador é usado para verificar e comparar sequências de caracteres dentro de um determinado campo, sendo utilizado com a cláusula **WHERE**.
+
+Este operador aceita o uso de operadores curingas, aumentando assim sua capacidade de operação. Neste sentido, são aceitos como operadores curingas os símbolos de porcentagem (%) que representa zero, um ou vários caracteres e underline (_) que representa sempre um único caractere.
+
+Desta forma, pode-se usar as seguintes referências (STEPHENS & PLEW, 2003):
+
+| Referência                 | Operação                                                                   |
+|----------------------------|----------------------------------------------------------------------------|
+| WHERE salario LIKE '11%'   | Encontra valores que começam com 11                                        |
+| WHERE salario LIKE '%8%'   | Encontra valores que tenham 8 em qualquer posição                          |
+| WHERE salario LIKE '_0%'   | Encontra valores que tenham 0 na segunda posição                           |
+| WHERE salario LIKE '1_%_%' | Encontra valores que começam com 1 e tenham três caracteres de comprimento |
+| WHERE salario LIKE '%6'    | Encontra qualquer valor que termine com 6                                  |
+| WHERE salario LIKE '_1%6'  | Encontra qualquer valor que tenha 1 na segunda posição e que termine com 6 |
+
+Por exemplo: Apresente uma consulta dos registros de todos os funcionários cujo nome comece com a letra **A**, utilizando o comando:
+
+```
+SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE 'A%';
+```
+
+Ou, apresente uma consulta dos registros de tdos os funcinários que possuam a letra **A** na segunda letra de seus nomes, utilizando o comando:
+
+```
+SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE '_A%';
+```
+
+Da mesma forma que os demais, o operador lógico **NOT** procura negar a busca de alguma sequência de caracter.
+
+Por exemplo: Podemos imaginar a situação de precisar consultar todos os registros da tabela **Funcionarios** com exceção dos registros em que o campo **nome_completo** contenha a sequência de caracteres NA. Assim, utiliza-se também o operador lógico **NOT** no comando:
+
+```
+SELECT nome_completo FROM Funcionarios WHERE nome_completo NOT LIKE '%AN%';
+```
