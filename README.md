@@ -132,3 +132,23 @@ O operador **lógico** do tipo **NOT** é utilizados quando é preciso estabelec
 ```
 SELECT * FROM Funcionarios WHERE NOT (funcao = 'Vendedor');
 ```
+
+- Conceitos:
+
+O operador **lógico** do tipo **XOR** (que efetua avaliação lógico de um critério de pesquisa como disjunção exclusiva) é utilizado quando se necessita que uma das condições seja falsa para obter-se um resultado lógico verdadeiro; caso contrário, se o valor lógico das condições for falso ou verdadeiro, o valor do resultado lógico retornado será falso. Eis a tabela verdade para esse operador:
+
+### Tabela Verdade - Disjunção Exclusiva
+
+| Condição A | Condição B | Resultado |
+|------------|------------|-----------|
+| Falsa      | Falsa      | FALSO     |
+| Verdadeira | Falsa      | VERDADEIRO|
+| Falsa      | Verdadeira | VERDADEIRO|
+| Verdadeira | Verdadeira | FALSO     |
+
+- Conceitos:
+
+O SGDB MySQL não possui este recurso. Mas isso não impede fazer uso deste tipo de critério de pesquisa, uma que a disjunção exclusiva pode ser obtida por meio da expressão lógica:
+
+> - (<Condição A> AND (NOT <Condição B>)) OR ((NOT <Condição A>) AND <Condição B>);
+
