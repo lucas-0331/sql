@@ -229,8 +229,7 @@ Por exemplo: Considere a necessidade de obter uma consulta de todos os registros
 ```
 SELECT nome_completo, filhos FROM Funcionarios WHERE salario BETWEEN 1700 AND 2000;
 ```
-
-sE A INTENÇÃO É FAZER A MESMA CONSULTA EXIBINDO AGORA OS NOMES E SALÁRIOS DOS REGISTROS DOS FUNCIONÁRIOS QUE GANHAM ABAIXO DE 1700 E ACIMA DE 2000 (Ou seja, que não estejam na faixa de valores entre 1700 e 2000) utiliza-se também o operador lógico **NOT** no comando:
+Se a intenção é fazer a mesma consulta exibindo agora os nomes e salários dos registros dos funcionários que ganham abaixo de 1700 e acima de 2000 (Ou seja, que não estejam na faixa de valores entre 1700 e 2000) utiliza-se também o operador lógicos **NOT** no comando:
 
 ```
 SELECT nome_completo, salario FROM Funcionarios WHERE salario NOT BETWEEN 1700 AND 2000;
@@ -300,7 +299,7 @@ Utilize o operador **LIKE** para fazer as seguintes atividades:
 - Respostas:
 
 ```{message=FALSE}
-message("SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE '%AN%';")
-message("SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '%6";")
-message("SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '_5%2';")
+SELECT nome_completo FROM Funcionarios WHERE nome_completo LIKE '%AN%';
+SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '%6";
+SELECT nome_completo, salario FROM Funcionarios WHERE salario LIKE '_5%2';
 ```
