@@ -1,4 +1,4 @@
-# MySQL EXCALIDRAW
+# MySQL
 
 ## Primeiros Passos 
 
