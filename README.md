@@ -1,6 +1,9 @@
 # MySQL
 
 ## Primeiros Passos 
+.
+.
+.
 
 ## Operadores Aritméticos
 
