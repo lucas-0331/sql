@@ -6,7 +6,7 @@
 
 - 2. Qual o salário dos funcionários da empresa que são programadores?
 
-- 3. Qual o salário dos funcionários da empresa que são vendedores?
+- 3. Qual o salário dos funcionários da empresa que são vendedores  ?
 
 - 4. Qual o salários dos funcionários da empresa que foram admitidos depois de 05-04-1999?
 
